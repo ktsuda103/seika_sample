@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/kintai.css">
+    <link href="https://use.fontawesome.com/releases/v6.2.0/css/all.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <title>勤怠管理</title>
+</head>
+<body>
+  <!-- header部分 -->
+  <div class="header">
+    <img src="../img/header_logo.png" height="80px">
+    <ul class="header-menu">
+      <a href="./top.html"><li class="header-menu-item">TOP</li></a>
+      <li class="header-menu-item">ユーザー名</li>
+      <a href="./login.html"><li class="header-menu-item">ログアウト</li></a>
+    </ul>
+  </div>
+
+  <!-- サイドバー -->
+  <button id="toggle-btn">Open</button>
+  <div class="sidebar">
+    <nav>
+      <ul>
+        <a href="./top.html"><li>TOP</li></a>
+        <a href="./zaiko.html"><li>在庫管理</li></a>
+        <a href="./ec.html"><li>ECサイト更新</li></a>
+        <a href="./kokyaku.html"><li>顧客管理</li></a>
+        <a href="./kyujin.html"><li>求人管理</li></a>
+        <a href="./oubosya.html"><li>応募者管理</li></a>
+        <a href="./keiri.html"><li>経理管理</li></a>
+        <a href="./kintai.html"><li>勤怠システム、シフト管理</li></a>
+      </ul>
+    </nav>
+  </div>
+    
+  <!-- メイン -->
+  <main class="main-content container">
+    <h2 class="mt-4">経理管理</h2>
+  
+    <!-- 入力フォーム -->
+    <div class="card p-4 mt-3">
+      <h4>売上・仕入の記録</h4>
+      <form>
+        <div class="row">
+          <div class="col-md-4">
+            <label for="date" class="form-label">日付:</label>
+            <input type="date" id="date" class="form-control">
+          </div>
+          <div class="col-md-4">
+            <label for="sales" class="form-label">売上:</label>
+            <input type="number" id="sales" class="form-control" placeholder="売上額">
+          </div>
+          <div class="col-md-4">
+            <label for="purchase-type" class="form-label">仕入区分:</label>
+            <div class="d-flex">
+              <select id="purchase-type" class="form-select">
+                <option value="原材料費">原材料費</option>
+                <option value="雑費">雑費</option>
+              </select>
+              <input type="number" id="purchase" class="form-control ms-2" placeholder="仕入額">
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-primary mt-3">保存</button>
+      </form>
+    </div>
+  
+    <!-- 履歴表示 -->
+    <div class="mt-4">
+      <ul class="nav nav-tabs" id="recordTabs">
+        <li class="nav-item">
+          <a class="nav-link active" id="daily-tab" data-bs-toggle="tab" href="#daily">日別記録</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="monthly-tab" data-bs-toggle="tab" href="#monthly">月別記録</a>
+        </li>
+      </ul>
+  
+      <div class="tab-content mt-3">
+        <!-- 日別記録 -->
+        <div class="tab-pane fade show active" id="daily">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th></th>
+                <th>日付</th>
+                <th>売上</th>
+                <th>仕入</th>
+                <th>粗利</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="checkbox" class="daily-check"></td>
+                <td>2025-04-01</td>
+                <td>¥50,000</td>
+                <td>¥15,000</td>
+                <td>¥35,000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+  
+        <!-- 月別記録 -->
+        <div class="tab-pane fade" id="monthly">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th><input type="checkbox" id="selectAllMonthly"></th>
+                <th>月</th>
+                <th>売上合計</th>
+                <th>仕入合計</th>
+                <th>粗利</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="checkbox" class="monthly-check"></td>
+                <td>2025-04</td>
+                <td>¥1,500,000</td>
+                <td>¥450,000</td>
+                <td>¥1,050,000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  
+    <!-- PDF発行ボタン -->
+    <div class="d-flex justify-content-end mt-4">
+      <button class="btn btn-success">売上仕入一覧発行 (PDF)</button>
+    </div>
+  </main>
+    
+  <script src="../js/common.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
+</html>

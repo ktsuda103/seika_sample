@@ -1,0 +1,127 @@
+#login-form-area {
+    width: 100%;
+    margin-top: 20px;
+}
+
+#login-form-area-inline {
+    width: 600px;
+    margin: 0px auto;
+    text-align: center;
+    padding: 30px 0;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.7);
+    background-color: #FFFFFF;
+}
+
+#login-form-area-inline img {
+    height: 70px;
+}
+
+#login-ui-area {
+    width: 300px;
+    margin: 0px auto 16px auto;
+    border: 0px;
+}
+
+#login-ui-area td {
+    border: 0px;
+    padding: 6px 0px;
+}
+
+#logo-area {
+    margin: 20px 0px;
+    width: 300px;
+    height: 57px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#login-logo-image {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#footer-area {
+    margin: 20px 0px 0px 0px;
+}
+
+#change-language {
+    width: 600px;
+    text-align: right;
+    margin: 0px auto;
+    padding-bottom: 10px;
+    padding-right: 20px;
+}
+
+.login-form-style {
+    border: 0px;
+    padding: 2px;
+    font-size: 1.1em;
+    font-family: Arial, sans-serif;
+    border: solid 1px #ccc;
+    margin: 0px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    width: 200px;
+}
+
+.login-button-style {
+    width: 280px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #FFF;
+    font-size: 12pt;
+    font-weight: bold;
+    margin: 8px auto;
+    padding: 6px 0px;
+    background-color: lightslategray;
+    font-family: "Meiryo UI";
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+}
+
+.login-button-style:hover {
+    margin: 8px auto 8px;
+    top: 1px;
+    position: relative;
+    cursor: pointer;
+}
+
+.label-width {
+    width: 100px;
+}
+
+.table-container {
+    display: table;
+    vertical-align: top;
+}
+
+.table-cell {
+    display: table-cell;
+}
+
+.center {
+    width: 100%;
+}
+
+.center .center-inline {
+    width: 100%;
+    margin: 0px auto;
+}
+
+.select-language {
+    width: 100px;
+    height: 25px;
+    padding-left: 5px;
+}

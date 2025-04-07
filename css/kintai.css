@@ -1,0 +1,31 @@
+/* カレンダーのスタイル */
+.table-bordered th, .table-bordered td {
+  text-align: center;
+  vertical-align: middle;
+  padding: 15px;
+  cursor: pointer;
+  width: 14.2%;
+}
+
+/* シフト希望の色（黄色） */
+.shift-pending {
+  background-color: #ffeb3b;
+}
+
+/* 確定シフトの色（青） */
+.shift-confirmed {
+  background-color: #2196f3;
+  color: white;
+}
+
+/* シフト不足の警告（赤） */
+.shift-warning {
+  background-color: #ff4c4c;
+  color: white;
+}
+
+/* シフト情報表示 */
+.shift-info {
+  font-size: 14px;
+  margin-top: 5px;
+}

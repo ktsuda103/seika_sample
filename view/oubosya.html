@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/zaiko.css">
+    <link href="https://use.fontawesome.com/releases/v6.2.0/css/all.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <title>応募者管理</title>
+</head>
+<body>
+  <!-- header部分 -->
+  <div class="header">
+    <img src="../img/header_logo.png" height="80px">
+    <ul class="header-menu">
+      <a href="./top.html"><li class="header-menu-item">TOP</li></a>
+      <li class="header-menu-item">ユーザー名</li>
+      <a href="./login.html"><li class="header-menu-item">ログアウト</li></a>
+    </ul>
+  </div>
+
+  <!-- サイドバー -->
+  <button id="toggle-btn">Open</button>
+  <div class="sidebar">
+    <nav>
+      <ul>
+        <a href="./top.html"><li>TOP</li></a>
+        <a href="./zaiko.html"><li>在庫管理</li></a>
+        <a href="./ec.html"><li>ECサイト更新</li></a>
+        <a href="./kokyaku.html"><li>顧客管理</li></a>
+        <a href="./kyujin.html"><li>求人管理</li></a>
+        <a href="./oubosya.html"><li>応募者管理</li></a>
+        <a href="./keiri.html"><li>経理管理</li></a>
+        <a href="./kintai.html"><li>勤怠システム、シフト管理</li></a>
+      </ul>
+    </nav>
+  </div>
+    
+  <!-- メイン -->
+  <main class="main-content">
+    <h2 class="mt-4">応募者管理</h2>
+    <!-- 検索フォーム -->
+    <div class="search-container">
+      <form class="search-form row">
+        <div class="col-12 row">
+          <label for="client" class="form-label col-2">応募者名</label>
+          <div class="col-10">
+            <input type="text" id="client" class="form-control" placeholder="フリーワード検索">
+          </div>
+        </div>
+
+        <div class="col-12 row">
+          <label for="theme-classification" class="form-label col-2">ステータス</label>
+          <div class="col-10">
+            <select class="form-select" id="theme-classification">
+              <option selected>選択</option>
+              <option value="client-theme">応募</option>
+              <option value="project-theme">書類選考中</option>
+              <option value="project-theme">書類選考落ち</option>
+              <option value="expense-theme">面接選考中</option>
+              <option value="expense-theme">面接選考落ち</option>
+              <option value="expense-theme">内定</option>
+              <option value="expense-theme">内定承諾</option>
+              <option value="expense-theme">入社</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="offset-10 col-1 search-button">検索</button>
+      </form>
+    </div>
+
+    <!-- 新商品追加ボタンを追加 -->
+    <div class="text-end my-3">
+      <button class="btn bg-warning">求人追加</button>
+    </div>
+
+    <!-- 登録商品一覧 -->
+    <div class="scroll-table">
+      <table>
+        <thead>
+          <tr>
+            <th class="">応募者No</th>
+            <a href=""><th class="">氏名</th></a>
+            <th>年齢</th>
+            <th>性別</th>
+            <th class="">ステータス</th>
+            <th class="">内定通知</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="">1</td>
+                <td class="">田中太郎</td>
+                <td class="">28</td>
+                <td class="">男性</td>
+                <td class="">面接選考中</td>
+                <td class="">✉</td>
+              </tr>
+            <tr>
+                <td class="">2</td>
+                <td class="">佐藤次郎</td>
+                <td class="">30</td>
+                <td class="">男性</td>
+                <td class="">書類選考落ち</td>
+                <td class="">✉</td>
+              </tr>
+            <tr>
+                <td class="">3</td>
+                <td class="">山田花子</td>
+                <td class="">40</td>
+                <td class="">女性</td>
+                <td class="">書類選考落ち</td>
+                <td class="">✉</td>
+              </tr>
+            <tr>
+                <td class="">4</td>
+                <td class="">上田三郎</td>
+                <td class="">28</td>
+                <td class="">男性</td>
+                <td class="">内定</td>
+                <td class="">✉</td>
+              </tr>
+            <tr>
+                <td class="">5</td>
+                <td class="">藤原大地</td>
+                <td class="">45</td>
+                <td class="">男性</td>
+                <td class="">入社</td>
+                <td class="">✉</td>
+              </tr>
+        </tbody>
+      </table>
+      </div>
+  </main>
+    
+  <script src="../js/common.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
+</html>

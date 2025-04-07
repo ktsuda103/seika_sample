@@ -1,0 +1,78 @@
+.search-container {
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin: 0 0 20px 100px;
+  width: 90%;
+}
+
+.search-form {
+  padding: 20px;
+  gap: 20px;
+}
+
+.search-button {
+  background-color: #a0a0a0;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.scroll-table {
+  margin-left: 100px;
+  /* width: calc(80%); */
+  /* overflow-x: scroll; */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  padding: 20px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #a0a0a0;
+  color: #fff;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+.excel-output-button {
+  width: 60px;
+  height: 30px;
+  vertical-align: middle;
+  border: none;
+  box-shadow: 4px 4px 0 #696969;
+  background-color: #d3d3d3;
+}
+
+.excel-output-button:hover {
+  cursor: pointer;
+}
+
+.excel-icon {
+  width: 15px;
+  margin-right: 3px;
+  display: inline;
+}
+
+.scroll-table .theme-name {
+  width: 1000px;
+}
+
+.scroll-table .rank {
+  width: 400px;
+}
