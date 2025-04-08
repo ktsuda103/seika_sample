@@ -26,13 +26,9 @@
     <nav>
       <ul>
         <a href="./top.html"><li>TOP</li></a>
-        <a href="./zaiko.html"><li>在庫管理</li></a>
-        <a href="./ec.html"><li>ECサイト更新</li></a>
-        <a href="./kokyaku.html"><li>顧客管理</li></a>
-        <a href="./kyujin.html"><li>求人管理</li></a>
-        <a href="./oubosya.html"><li>応募者管理</li></a>
+        <a href="./tenpo.html"><li>店舗管理</li></a>
+        <a href="./task.html"><li>タスク管理</li></a>
         <a href="./keiri.html"><li>経理管理</li></a>
-        <a href="./kintai.html"><li>勤怠システム、シフト管理</li></a>
       </ul>
     </nav>
   </div>
@@ -41,31 +37,59 @@
   <main class="main-content container">
     <h2 class="mt-4">経理管理</h2>
   
-    <!-- 入力フォーム -->
+    <!-- 売上入力フォーム -->
     <div class="card p-4 mt-3">
-      <h4>売上・仕入の記録</h4>
+      <h4 class="mb-3">売上入力</h4>
       <form>
         <div class="row">
           <div class="col-md-4">
-            <label for="date" class="form-label">日付:</label>
-            <input type="date" id="date" class="form-control">
+            <label for="sales-date" class="form-label">日付:</label>
+            <input type="date" id="sales-date" class="form-control">
           </div>
           <div class="col-md-4">
-            <label for="sales" class="form-label">売上:</label>
-            <input type="number" id="sales" class="form-control" placeholder="売上額">
+            <label for="store-select" class="form-label">店舗:</label>
+            <select id="store-select" class="form-select">
+              <option value="">店舗を選択</option>
+              <option value="店舗A">店舗A</option>
+              <option value="店舗B">店舗B</option>
+              <option value="店舗C">店舗C</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label for="sales-amount" class="form-label">売上額:</label>
+            <input type="number" id="sales-amount" class="form-control" placeholder="例：50000">
+          </div>
+          <div class="d-flex justify-content-end mt-3">
+            <button class="btn btn-primary">売上を保存</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- 仕入入力フォーム -->
+    <div class="card p-4 mt-4">
+      <h4 class="mb-3">仕入入力</h4>
+      <form>
+        <div class="row">
+          <div class="col-md-4">
+            <label for="purchase-date" class="form-label">日付:</label>
+            <input type="date" id="purchase-date" class="form-control">
           </div>
           <div class="col-md-4">
             <label for="purchase-type" class="form-label">仕入区分:</label>
-            <div class="d-flex">
-              <select id="purchase-type" class="form-select">
-                <option value="原材料費">原材料費</option>
-                <option value="雑費">雑費</option>
-              </select>
-              <input type="number" id="purchase" class="form-control ms-2" placeholder="仕入額">
-            </div>
+            <select id="purchase-type" class="form-select">
+              <option value="原材料費">原材料費</option>
+              <option value="雑費">雑費</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label for="purchase-amount" class="form-label">仕入額:</label>
+            <input type="number" id="purchase-amount" class="form-control" placeholder="例：15000">
           </div>
         </div>
-        <button class="btn btn-primary mt-3">保存</button>
+        <div class="d-flex justify-content-end mt-3">
+          <button class="btn btn-primary">仕入を保存</button>
+        </div>
       </form>
     </div>
   

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/zaiko.css">
     <link href="https://use.fontawesome.com/releases/v6.2.0/css/all.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <title>求人管理</title>
+    <title>顧客管理</title>
 </head>
 <body>
   <!-- header部分 -->
@@ -26,7 +26,9 @@
     <nav>
       <ul>
         <a href="./top.html"><li>TOP</li></a>
+        <a href="./yoyaku.html"><li>予約管理</li></a>
         <a href="./zaiko.html"><li>在庫管理</li></a>
+        <a href="./seizou.html"><li>製造管理</li></a>
         <a href="./ec.html"><li>ECサイト更新</li></a>
         <a href="./kokyaku.html"><li>顧客管理</li></a>
         <a href="./kyujin.html"><li>求人管理</li></a>
@@ -39,32 +41,31 @@
     
   <!-- メイン -->
   <main class="main-content">
-    <h2 class="mt-4">求人管理</h2>
+    <h2 class="mt-4">顧客管理</h2>
     <!-- 検索フォーム -->
     <div class="search-container">
       <form class="search-form row">
         <div class="col-12 row">
-          <label for="client" class="form-label col-2">タイトル</label>
+          <label for="client" class="form-label col-2">氏名</label>
           <div class="col-10">
             <input type="text" id="client" class="form-control" placeholder="フリーワード検索">
           </div>
         </div>
 
         <div class="col-12 row">
-          <label for="theme-classification" class="form-label col-2">ステータス</label>
+          <label for="theme-classification" class="form-label col-2">性別</label>
           <div class="col-10">
             <select class="form-select" id="theme-classification">
               <option selected>選択</option>
-              <option value="client-theme">公開中</option>
-              <option value="project-theme">未公開</option>
-              <option value="expense-theme">公開終了</option>
-              <option value="expense-theme">下書き</option>
+              <option value="client-theme">男性</option>
+              <option value="project-theme">女性</option>
+              <option value="expense-theme">入力なし</option>
             </select>
           </div>
         </div>
 
         <div class="col-12 row">
-            <label for="expiration-start" class="form-label col-2">公開期間</label>
+            <label for="expiration-start" class="form-label col-2">初購入日</label>
             <div class="col-4">
                 <input type="date" id="expiration-start" class="form-control">
             </div>
@@ -80,7 +81,7 @@
 
     <!-- 新商品追加ボタンを追加 -->
     <div class="text-end my-3">
-      <button class="btn bg-warning">求人追加</button>
+      <button class="btn bg-warning">新商品追加</button>
     </div>
 
     <!-- 登録商品一覧 -->
@@ -88,48 +89,54 @@
         <table>
             <thead>
               <tr>
-                <th class="">求人No</th>
-                <a href=""><th class="">タイトル</th></a>
-                <th class="">ステータス</th>
-                <th class="">公開開始日</th>
-                <th class="">公開終了日</th>
+                <th class="">顧客No</th>
+                <a href=""><th class="">氏名</th></a>
+                <th class="">年齢</th>
+                <th class="">性別</th>
+                <th class="">初購入日</th>
+                <th class="">LINE送信</th>
               </tr>
             </thead>
             <tbody>
-                <tr class="bg-secondary">
+                <tr>
                     <td class="">1</td>
-                    <td class="">甘い香りに包まれて働く♪ 製菓店スタッフ募集！</td>
-                    <td class="">公開終了</td>
-                    <td class="">2024/1/1</td>
+                    <td class="">田中太郎</td>
+                    <td class="">28</td>
+                    <td class="">男性</td>
                     <td class="">2024/4/3</td>
+                    <td class="">✉</td>
                 </tr>
                 <tr>
                     <td class="">2</td>
-                    <td class="">未経験OK！お菓子好き必見のパティスリー求人✨</td>
-                    <td class="">公開中</td>
-                    <td class="">2025/1/1</td>
-                    <td class="">2025/4/30</td>
+                    <td class="">佐藤次郎</td>
+                    <td class="">30</td>
+                    <td class="">男性</td>
+                    <td class="">2024/3/3</td>
+                    <td class="">✉</td>
                 </tr>
-                <tr class="bg-secondary">
+                <tr>
                     <td class="">3</td>
-                    <td class="">スイーツ作りのお手伝い♪ 製菓店スタッフ急募！</td>
-                    <td class="">公開終了</td>
-                    <td class="">2023/2/2</td>
-                    <td class="">2023/6/30</td>
+                    <td class="">山田花子</td>
+                    <td class="">40</td>
+                    <td class="">女性</td>
+                    <td class="">2022/4/3</td>
+                    <td class="">✉</td>
                 </tr>
                 <tr>
                     <td class="">4</td>
-                    <td class="">笑顔と甘さを届ける仕事♪ 製菓店の販売＆製造スタッフ募集</td>
-                    <td class="">未公開</td>
-                    <td class="">2024/6/6</td>
-                    <td class="">2024/10/3</td>
+                    <td class="">上田三郎</td>
+                    <td class="">28</td>
+                    <td class="">男性</td>
+                    <td class="">2024/4/3</td>
+                    <td class="">✉</td>
                 </tr>
                 <tr>
                     <td class="">5</td>
-                    <td class="">お菓子作りのプロを目指せる！パティスリーで働こう🍰</td>
-                    <td class="">下書き</td>
-                    <td class="">-</td>
-                    <td class="">-</td>
+                    <td class="">藤原大地</td>
+                    <td class="">45</td>
+                    <td class="">男性</td>
+                    <td class="">2024/7/3</td>
+                    <td class="">✉</td>
                 </tr>
             </tbody>
           </table>

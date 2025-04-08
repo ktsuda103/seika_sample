@@ -16,7 +16,7 @@
     </div>
 
     <!-- ログインフォーム -->
-    <form id="login-form" name="login-form" action="./view/top.html">
+    <form id="login-form" name="login-form" action="./tenpo/top.html">
         <input name="csrftoken" id="csrftoken" type="hidden" value="">
         <div id="login-form-area">
 
@@ -39,8 +39,18 @@
                     </tbody>
                 </table>
 
-                <button class="login-button-style" tabindex="3">ログイン</button>
+                <button class="login-button-style" tabindex="3">店舗側ログイン</button>
+                
+            </div>
+        </div>
+    </form>
+    <form id="login-form" name="login-form" action="./systemkanri/top.html">
+        <div id="login-form-area">
+            <div id="login-form-area-inline">
 
+                <table id="login-ui-area">
+                </table>
+                <button class="login-button-style" tabindex="3">システム管理側ログイン</button>
             </div>
         </div>
     </form>
