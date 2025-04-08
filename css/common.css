@@ -40,6 +40,7 @@ main {
   top: 0;
   z-index: 1;
   justify-content: space-between;
+  align-items: center;
 }
 
 .header img {
