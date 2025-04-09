@@ -155,3 +155,33 @@ h2::before, h2::after{
 .main-content.expanded {
   margin-left: 250px;
 }
+
+.hamburger {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-left: 30px;
+}
+
+.hamburger span {
+  width: 30px;
+  height: 4px;
+  background-color: #686868;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+/* 開いたときの状態 */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(7px, 7px);
+  width: 40px!important;
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+  width: 40px!important;
+}
