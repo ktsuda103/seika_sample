@@ -14,6 +14,19 @@
         text-decoration-color: red;
         text-decoration-thickness: 2px;
       }
+      .main-content h3 {
+        font-size: 1.8rem;
+      }
+
+      .btn-lg {
+        font-size: 1.5rem;
+        padding: 1rem;
+      }
+
+      .text-danger {
+        font-size: 1.2rem;
+      }
+
     </style>
 </head>
 <body>
@@ -48,104 +61,38 @@
     
   <!-- メイン -->
   <main class="main-content">
-    <div class="calendar-container">
+    <h2>お知らせ</h2>
+    <div class="announcement">
+      <ul>
+        <li>■お知らせ<br>
+          2025.4.15 予約登録時のエラー修正済<br><br>
+          システムの使い方等についてご不明点ありましたら、<br>
+          下記メールアドレスにお問い合わせください。<br><br>
+          wiping@example.co.jp
+        </li>
+      </ul>
+    </div>
+  
+    <div class="calendar-container mb-4">
       <div id="calendar-current"></div>
       <div id="calendar-next"></div>
     </div>
-    <!-- カードを追加 -->
-    <div class="container mt-4">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="card">
-            <div class="card-header">
-              在庫管理
-            </div>
-            <div class="card-body">
-              <p class="card-text text-danger">消費期限間近の商品が発生しています！在庫を確認してください</p>
-              <ul class="list-group-flush">
-                <li class="list-group-item">
-                  <h5>消費期限間近の商品</h5>
-                  <table class="table">
-                    <thead>
-                      <tr>
-                        <th>商品名</th>
-                        <th>消費期限</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>牛乳</td>
-                        <td>2025-04-20</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </li>
-                <li class="list-group-item">
-                  <h5>仕入予定</h5>
-                  <table class="table">
-                    <thead>
-                      <tr>
-                        <th>商品名</th>
-                        <th>数量</th>
-                        <th>仕入予定日</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>牛乳</td>
-                        <td>20</td>
-                        <td>2025-04-18</td>
-                      </tr>
-                      <tr>
-                        <td>パン</td>
-                        <td>30</td>
-                        <td>2025-04-19</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </li>
-              </ul>
-              <a href="./zaiko.html" class="btn btn-primary mt-3">詳細を見る</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="card">
-            <div class="card-header">
-              求人管理
-            </div>
-            <div class="card-body">
-              <p class="card-text text-danger">新規応募あり！</p>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">
-                  <h5>新規応募</h5>
-                  <table class="table">
-                    <thead>
-                      <tr>
-                        <th>氏名</th>
-                        <th>年齢</th>
-                        <th>応募日</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>田中太郎</td>
-                        <td>28</td>
-                        <td>2025-04-01</td>
-                      </tr>
-                      <tr>
-                        <td>山田次郎</td>
-                        <td>25</td>
-                        <td>2025-04-05</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </li>
-              </ul>
-              <a href="#" class="btn btn-primary">詳細を見る</a>
-            </div>
-          </div>
-        </div>
+    
+    <div class="d-flex justify-content-center flex-wrap gap-4">
+      <!-- 予約管理ボタン -->
+      <div class="mb-4 p-4 bg-light border rounded text-center w-50">
+        <a href="./yoyaku.html" class="btn btn-lg btn-primary w-100 fs-4 py-3 mb-5 text-white">予約管理へ</a>
+        <p class="text-danger fw-bold fs-5">＼消費期限間近の商品があります！／</p>
+        <a href="./zaiko.html" class="btn btn-lg btn-primary w-100 fs-4 py-3 mb-5 text-white">在庫管理へ</a>
+        <p class="text-danger fw-bold fs-5">＼製造が必要な商品があります！／</p>
+        <a href="./seizou.html" class="btn btn-lg btn-primary w-100 fs-4 py-3 mb-5 text-white">製造管理へ</a>
+        <a href="./ec.html" class="btn btn-lg btn-primary w-100 fs-4 py-3 mb-5 text-white">ECサイト更新へ</a>
+        <a href="./kokyaku.html" class="btn btn-lg btn-primary w-100 fs-4 py-3 mb-5 text-white">顧客管理へ</a>
+        <a href="./kyujin.html" class="btn btn-lg btn-primary w-100 fs-4 py-3 mb-5 text-white">求人管理へ</a>
+        <p class="text-danger fw-bold fs-5">＼新規応募があります！／</p>
+        <a href="./oubosya.html" class="btn btn-lg btn-primary w-100 fs-4 py-3 mb-5 text-white">応募者管理へ</a>
+        <a href="./keiri.html" class="btn btn-lg btn-primary w-100 fs-4 py-3 mb-5 text-white">経理管理へ</a>
+        <a href="./kintai.html" class="btn btn-lg btn-primary w-100 fs-4 py-3 mb-5 text-white">勤怠管理へ</a>
       </div>
     </div>
   </main>
