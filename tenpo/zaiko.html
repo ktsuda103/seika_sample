@@ -45,110 +45,225 @@
   </div>
     
   <!-- メイン -->
-  <main class="main-content">
-    <h2 class="mt-4">在庫管理</h2>
-    <!-- 検索フォーム -->
-    <div class="search-container">
-      <form class="search-form row">
-        <div class="col-12 row">
-          <label for="theme-classification" class="form-label col-2">種別</label>
-          <div class="col-10">
-            <select class="form-select" id="theme-classification">
-              <option selected>選択</option>
-              <option value="client-theme">商品</option>
-              <option value="project-theme">材料</option>
-              <option value="expense-theme">備品</option>
-              <option value="expense-theme">販促品</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="col-12 row">
-          <label for="client" class="form-label col-2">品名</label>
-          <div class="col-10">
-            <input type="text" id="client" class="form-control" placeholder="フリーワード検索">
-          </div>
-        </div>
-
-        <div class="col-12 row">
-            <label for="expiration-start" class="form-label col-2">消費期限</label>
-            <div class="col-4">
-                <input type="date" id="expiration-start" class="form-control">
-            </div>
-            <span class="col-auto">～</span>
-            <div class="col-4">
-                <input type="date" id="expiration-end" class="form-control">
-            </div>
-        </div>
-
-        <button type="submit" class="offset-10 col-1 search-button">検索</button>
-      </form>
+  <main class="main-content mt-4">
+    <h2>在庫一覧</h2>
+  
+    <!-- タブ切り替え -->
+    <ul class="nav nav-tabs" id="zaikoTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="shohin-tab" data-bs-toggle="tab" data-bs-target="#shohin" type="button" role="tab">商品</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="zairyo-tab" data-bs-toggle="tab" data-bs-target="#zairyo" type="button" role="tab">材料</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="dougu-tab" data-bs-toggle="tab" data-bs-target="#dougu" type="button" role="tab">道具</button>
+      </li>
+    </ul>
+  
+    <!-- タブコンテンツ -->
+    <div class="tab-content p-3 border border-top-0 bg-white" id="zaikoTabsContent">
+      <!-- 各タブ -->
+      <div class="tab-pane fade show active" id="shohin" role="tabpanel">
+        <div id="shohin-container"></div>
+      </div>
+      <div class="tab-pane fade" id="zairyo" role="tabpanel">
+        <div id="zairyo-container"></div>
+      </div>
+      <div class="tab-pane fade" id="dougu" role="tabpanel">
+        <div id="dougu-container"></div>
+      </div>
+      <div class="text-end">
+        <button class="btn btn-success" onclick="addItem('product')">＋ 品目を追加</button>
+      </div>
     </div>
 
-    <!-- 仕入入力ボタンを追加 -->
-    <div class="text-end my-3">
-      <button class="btn bg-warning">仕入入力</button>
-    </div>
+  
+    <script>
+      const dataSets = {
+        shohin: {
+          'ショートケーキ': [
+            { unit: '1ホール', expire: '2025-04-30', qty: 3 },
+            { unit: '1個', expire: '2025-05-02', qty: 8 }
+          ],
+          'チョコレートケーキ': [
+            { unit: '1ホール', expire: '2025-04-28', qty: 2 },
+            { unit: '1カット', expire: '2025-05-01', qty: 6 }
+          ],
+          'タルト': [
+            { unit: '1ホール', expire: '2025-05-07', qty: 1 },
+            { unit: '1カット', expire: '2025-05-03', qty: 5 }
+          ],
+          'プリン': [
+            { unit: '1個', expire: '2025-05-01', qty: 10 }
+          ],
+          'ロールケーキ': [
+            { unit: '1本', expire: '2025-05-04', qty: 2 },
+            { unit: '1カット', expire: '2025-05-04', qty: 7 }
+          ],
+          'フルーツケーキ': [
+            { unit: '1ホール', expire: '2025-04-30', qty: 1 },
+            { unit: '1個', expire: '2025-05-02', qty: 4 }
+          ],
+          'シフォンケーキ': [
+            { unit: '1ホール', expire: '2025-05-05', qty: 3 }
+          ],
+          'ガトーショコラ': [
+            { unit: '1カット', expire: '2025-05-03', qty: 5 }
+          ],
+          'チーズケーキ': [
+            { unit: '1ホール', expire: '2025-05-06', qty: 2 }
+          ],
+          'モンブラン': [
+            { unit: '1個', expire: '2025-05-02', qty: 6 }
+          ]
+        },
+        zairyo: {
+          '生クリーム': [
+            { unit: '100ml', expire: '2025-04-30', qty: 1 },
+            { unit: '200ml', expire: '2025-05-01', qty: 2 }
+          ],
+          '小麦粉': [
+            { unit: '1kg', expire: '2025-07-01', qty: 5 }
+          ],
+          '卵': [
+            { unit: '10個入り', expire: '2025-04-28', qty: 2 }
+          ],
+          '砂糖': [
+            { unit: '1kg', expire: '2026-01-01', qty: 3 }
+          ],
+          '牛乳': [
+            { unit: '1L', expire: '2025-04-25', qty: 4 }
+          ],
+          'チョコレート': [
+            { unit: '500g', expire: '2025-12-01', qty: 2 }
+          ],
+          'フルーツミックス': [
+            { unit: '1パック', expire: '2025-05-03', qty: 1 }
+          ],
+          'ゼラチン': [
+            { unit: '100g', expire: '2025-10-10', qty: 2 }
+          ],
+          'バター': [
+            { unit: '200g', expire: '2025-06-01', qty: 3 }
+          ],
+          'ベーキングパウダー': [
+            { unit: '50g', expire: '2026-03-01', qty: 1 }
+          ]
+        },
+        dougu: {
+          'ケーキ型': [
+            { unit: '大', expire: '', qty: 3 },
+            { unit: '小', expire: '', qty: 5 }
+          ],
+          '泡立て器': [
+            { unit: '標準', expire: '', qty: 2 }
+          ],
+          'ヘラ': [
+            { unit: 'シリコン', expire: '', qty: 4 }
+          ],
+          'ミキサー': [
+            { unit: '電動', expire: '', qty: 1 }
+          ],
+          '包丁': [
+            { unit: 'ペティ', expire: '', qty: 3 }
+          ],
+          'スケッパー': [
+            { unit: '金属', expire: '', qty: 2 }
+          ],
+          '温度計': [
+            { unit: 'デジタル', expire: '', qty: 1 }
+          ],
+          'オーブン皿': [
+            { unit: '大', expire: '', qty: 4 }
+          ],
+          'まな板': [
+            { unit: 'プラスチック', expire: '', qty: 3 }
+          ],
+          'ボウル': [
+            { unit: 'ステンレス', expire: '', qty: 5 }
+          ]
+        }
+      };
 
-    <!-- 在庫一覧 -->
-    <div class="scroll-table">
-        <table>
-            <thead>
-              <tr>
-                <th class="">管理No</th>
-                <th class="">種別</th>
-                <a href=""><th class="">品名</th></a>
-                <th class="">在庫数</th>
-                <th class="">単位</th>
-                <th class="">消費期限</th>
-              </tr>
-            </thead>
-            <tbody>
-                <tr class="bg-danger">
-                    <td class="">1</td>
-                    <td class="">商品</td>
-                    <td class="">ショートケーキ</td>
-                    <td class="">1</td>
-                    <td class="">ホール</td>
-                    <td class="">2025/4/3</td>
-                </tr>
-              <tr class="bg-warning">
-                <td class="">2</td>
-                <td class="">商品</td>
-                <td class="">ショートケーキ</td>
-                <td class="">6</td>
-                <td class="">個</td>
-                <td class="">2025/4/7</td>
-              </tr>
-              <tr>
-                <td class="">3</td>
-                <td class="">材料</td>
-                <td class="">小麦粉</td>
-                <td class="">10</td>
-                <td class="">kg</td>
-                <td class="">2025/4/30</td>
-              </tr>
-              <tr>
-                <td class="">4</td>
-                <td class="">材料</td>
-                <td class="">牛乳</td>
-                <td class="">60</td>
-                <td class="">ℓ</td>
-                <td class="">2025/4/30</td>
-            </tr>
-              <tr>
-                <td class="">5</td>
-                <td class="">商品</td>
-                <td class="">クッキー</td>
-                <td class="">10</td>
-                <td class="">箱</td>
-                <td class="">2025/4/30</td>
-            </tr>
-            </tbody>
-          </table>
-    </div>
+        
+      function createTable(category) {
+        const container = document.getElementById(`${category}-container`);
+        container.innerHTML = '';
+
+        const table = document.createElement('table');
+        table.className = 'table table-bordered align-middle text-center';
+
+        const thead = document.createElement('thead');
+        thead.innerHTML = `
+          <tr class="table-secondary">
+            <th style="width: 30%">品目名</th>
+            <th style="width: 25%">消費期限</th>
+            <th style="width: 15%">単位</th>
+            <th style="width: 15%">残量</th>
+            <th style="width: 15%">操作</th>
+          </tr>`;
+        table.appendChild(thead);
+
+        const tbody = document.createElement('tbody');
+
+        const items = dataSets[category];
+        for (const [name, rows] of Object.entries(items)) {
+          rows.forEach((row, i) => {
+            const tr = document.createElement('tr');
+            if (i === 0) {
+              const itemCell = document.createElement('td');
+              itemCell.rowSpan = rows.length;
+              itemCell.innerHTML = `
+                <input type="text" class="form-control mb-2" value="${name}">
+                <button class="btn btn-sm btn-outline-primary w-100 add-row-btn">行追加</button>
+              `;
+              tr.appendChild(itemCell);
+            }
+
+            tr.innerHTML += `
+              <td><input type="date" class="form-control" value="${row.expire}"></td>
+              <td><input type="text" class="form-control" value="${row.unit}"></td>
+              <td><input type="number" class="form-control" value="${row.qty}"></td>
+              <td><button class="btn btn-danger btn-sm remove-row-btn">削除</button></td>
+            `;
+            tbody.appendChild(tr);
+          });
+        }
+
+        table.appendChild(tbody);
+        container.appendChild(table);
+
+        // 行追加＆削除処理（前と同じ）
+        container.addEventListener('click', (e) => {
+          if (e.target.classList.contains('add-row-btn')) {
+            const tr = e.target.closest('tr');
+            const newTr = document.createElement('tr');
+            newTr.innerHTML = `
+              <td><input type="date" class="form-control" value=""></td>
+              <td><input type="text" class="form-control" value=""></td>
+              <td><input type="number" class="form-control" value="0"></td>
+              <td><button class="btn btn-danger btn-sm remove-row-btn">削除</button></td>
+            `;
+            tr.parentNode.insertBefore(newTr, tr.nextSibling);
+            // rowspan調整
+            const itemCell = tr.querySelector('td[rowspan]');
+            if (itemCell) itemCell.rowSpan += 1;
+          }
+
+          if (e.target.classList.contains('remove-row-btn')) {
+            const tr = e.target.closest('tr');
+            const itemCell = tr.parentNode.querySelector('td[rowspan]');
+            if (itemCell && itemCell.rowSpan > 1) {
+              itemCell.rowSpan -= 1;
+            }
+            tr.remove();
+          }
+        });
+      }
+      ['shohin', 'zairyo', 'dougu'].forEach(createTable);
+    </script>
   </main>
-    
   <script src="../js/common.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
