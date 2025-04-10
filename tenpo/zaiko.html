@@ -83,72 +83,72 @@
       const dataSets = {
         shohin: {
           'ショートケーキ': [
-            { unit: '1ホール', expire: '2025-04-30', qty: 3 },
-            { unit: '1個', expire: '2025-05-02', qty: 8 }
+            { unit: 'ホール', expire: '2025-04-30', qty: 3 },
+            { unit: '個', expire: '2025-05-02', qty: 8 }
           ],
           'チョコレートケーキ': [
-            { unit: '1ホール', expire: '2025-04-28', qty: 2 },
-            { unit: '1カット', expire: '2025-05-01', qty: 6 }
+            { unit: 'ホール', expire: '2025-04-28', qty: 2 },
+            { unit: 'カット', expire: '2025-05-01', qty: 6 }
           ],
           'タルト': [
-            { unit: '1ホール', expire: '2025-05-07', qty: 1 },
-            { unit: '1カット', expire: '2025-05-03', qty: 5 }
+            { unit: 'ホール', expire: '2025-05-07', qty: 1 },
+            { unit: 'カット', expire: '2025-05-03', qty: 5 }
           ],
           'プリン': [
-            { unit: '1個', expire: '2025-05-01', qty: 10 }
+            { unit: '個', expire: '2025-05-01', qty: 10 }
           ],
           'ロールケーキ': [
-            { unit: '1本', expire: '2025-05-04', qty: 2 },
-            { unit: '1カット', expire: '2025-05-04', qty: 7 }
+            { unit: '本', expire: '2025-05-04', qty: 2 },
+            { unit: 'カット', expire: '2025-05-04', qty: 7 }
           ],
           'フルーツケーキ': [
-            { unit: '1ホール', expire: '2025-04-30', qty: 1 },
-            { unit: '1個', expire: '2025-05-02', qty: 4 }
+            { unit: 'ホール', expire: '2025-04-30', qty: 1 },
+            { unit: '個', expire: '2025-05-02', qty: 4 }
           ],
           'シフォンケーキ': [
-            { unit: '1ホール', expire: '2025-05-05', qty: 3 }
+            { unit: 'ホール', expire: '2025-05-05', qty: 3 }
           ],
           'ガトーショコラ': [
-            { unit: '1カット', expire: '2025-05-03', qty: 5 }
+            { unit: 'カット', expire: '2025-05-03', qty: 5 }
           ],
           'チーズケーキ': [
-            { unit: '1ホール', expire: '2025-05-06', qty: 2 }
+            { unit: 'ホール', expire: '2025-05-06', qty: 2 }
           ],
           'モンブラン': [
-            { unit: '1個', expire: '2025-05-02', qty: 6 }
+            { unit: '個', expire: '2025-05-02', qty: 6 }
           ]
         },
         zairyo: {
           '生クリーム': [
-            { unit: '100ml', expire: '2025-04-30', qty: 1 },
-            { unit: '200ml', expire: '2025-05-01', qty: 2 }
+            { unit: 'ml', expire: '2025-04-30', qty: 1 },
+            { unit: 'ml', expire: '2025-05-01', qty: 2 }
           ],
           '小麦粉': [
-            { unit: '1kg', expire: '2025-07-01', qty: 5 }
+            { unit: 'kg', expire: '2025-07-01', qty: 5 }
           ],
           '卵': [
-            { unit: '10個入り', expire: '2025-04-28', qty: 2 }
+            { unit: '個入り', expire: '2025-04-28', qty: 2 }
           ],
           '砂糖': [
-            { unit: '1kg', expire: '2026-01-01', qty: 3 }
+            { unit: 'kg', expire: '2026-01-01', qty: 3 }
           ],
           '牛乳': [
-            { unit: '1L', expire: '2025-04-25', qty: 4 }
+            { unit: 'L', expire: '2025-04-25', qty: 4 }
           ],
           'チョコレート': [
-            { unit: '500g', expire: '2025-12-01', qty: 2 }
+            { unit: 'g', expire: '2025-12-01', qty: 2 }
           ],
           'フルーツミックス': [
-            { unit: '1パック', expire: '2025-05-03', qty: 1 }
+            { unit: 'パック', expire: '2025-05-03', qty: 1 }
           ],
           'ゼラチン': [
-            { unit: '100g', expire: '2025-10-10', qty: 2 }
+            { unit: 'g', expire: '2025-10-10', qty: 2 }
           ],
           'バター': [
-            { unit: '200g', expire: '2025-06-01', qty: 3 }
+            { unit: 'g', expire: '2025-06-01', qty: 3 }
           ],
           'ベーキングパウダー': [
-            { unit: '50g', expire: '2026-03-01', qty: 1 }
+            { unit: 'g', expire: '2026-03-01', qty: 1 }
           ]
         },
         dougu: {
@@ -199,8 +199,8 @@
           <tr class="table-secondary">
             <th style="width: 30%">品目名</th>
             <th style="width: 25%">消費期限</th>
+            <th style="width: 15%">数量</th>
             <th style="width: 15%">単位</th>
-            <th style="width: 15%">残量</th>
             <th style="width: 15%">操作</th>
           </tr>`;
         table.appendChild(thead);
@@ -216,15 +216,15 @@
               itemCell.rowSpan = rows.length;
               itemCell.innerHTML = `
                 <input type="text" class="form-control mb-2" value="${name}">
-                <button class="btn btn-sm btn-outline-primary w-100 add-row-btn">行追加</button>
+                <button class="btn btn-sm btn-outline-warning text-white w-25 btn-warning add-row-btn">行追加</button>
               `;
               tr.appendChild(itemCell);
             }
 
             tr.innerHTML += `
               <td><input type="date" class="form-control" value="${row.expire}"></td>
-              <td><input type="text" class="form-control" value="${row.unit}"></td>
               <td><input type="number" class="form-control" value="${row.qty}"></td>
+              <td><input type="text" class="form-control" value="${row.unit}"></td>
               <td><button class="btn btn-danger btn-sm remove-row-btn">削除</button></td>
             `;
             tbody.appendChild(tr);
